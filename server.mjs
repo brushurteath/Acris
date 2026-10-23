@@ -24,6 +24,7 @@ function validateRecord(data){
   if(!Number.isInteger(data.year)||data.year<1980||data.year>new Date().getFullYear())fail(400,'毕业年份无效。');r.year=data.year;
   if(data.consent!==true)fail(400,'请明确同意公开所提交的职业资料。');
   if(typeof data.followup!=='boolean')fail(400,'请选择是否参与回访。');r.followup=data.followup;
+  r.startCity=data.startCity?text(data.startCity,'启航城市',30):'';
   return r;
 }
 function validateTimeline(value){
@@ -125,7 +126,7 @@ export function createApp(config={}){
       }
       if(!['GET','HEAD'].includes(method))fail(405,'不支持的请求方法。');
       // Explicit allowlist prevents accidental exposure of source, database or secrets.
-      const allowed=new Map([['/','index.html'],['/index.html','index.html'],['/app.js','app.js'],['/demo-data.js','demo-data.js'],['/style.css','style.css'],['/favicon.svg','favicon.svg']]);
+      const allowed=new Map([['/','index.html'],['/index.html','index.html'],['/app.js','app.js'],['/galaxy.js','galaxy.js'],['/demo-data.js','demo-data.js'],['/style.css','style.css'],['/cosmos.css','cosmos.css'],['/favicon.svg','favicon.svg']]);
       const file=allowed.get(path);if(!file)fail(404,'页面不存在。');const content=readFileSync(resolve(root,'dist',file));const mime={'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.css':'text/css; charset=utf-8','.svg':'image/svg+xml'};res.writeHead(200,{'Content-Type':mime[extname(file)],'Cache-Control':'no-cache'});res.end(method==='HEAD'?undefined:content);
     }catch(e){if(!res.headersSent)reply(res,e.status||500,{error:e.status?e.message:'服务暂时不可用，请稍后再试。'});else res.end();if(!e.status)console.error('Acris server error:',e.code||e.name);}
   });

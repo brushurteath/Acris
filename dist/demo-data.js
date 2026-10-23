@@ -6,4 +6,4 @@ export const examples = [
  {id:'demo-4',alias:'林间',major:'工学类',tier:'高职专科',region:'华南',degree:'专科',year:2024,city:'佛山',industry:'制造业',role:'设备技术员',salary:'5–8k',status:'就业',summary:'在生产现场学习，也在摸索技术岗位的长期成长路线。',advice:'除了月薪，还要了解倒班、住宿和技能培训。',timeline:[{year:'2024',title:'毕业 · 设备技术员',text:'通过实习留用进入设备维护岗位。'},{year:'2025',title:'第 1 年 · 技能进阶',text:'参与设备改造项目，学习自动化相关知识。'}]},
  {id:'demo-5',alias:'远山',major:'计算机类',tier:'双一流',region:'西南',degree:'硕士',year:2025,city:'成都',industry:'软件服务',role:'后端开发',salary:'12–18k',status:'就业',summary:'毕业后选择回到熟悉的城市，寻找生活与成长的平衡。',advice:'把到手收入与租房成本放在一起比较。',timeline:[{year:'2025',title:'毕业 · 后端开发',text:'在成都开始第一份全职工作，目前仍在适应期。'}]},
  {id:'demo-6',alias:'未央',major:'经济与管理',tier:'普通本科',region:'华东',degree:'本科',year:2025,city:'南京',industry:'待确定',role:'正在寻找机会',salary:'暂无工资',status:'待业',summary:'暂时没有确定的答案，也值得被如实记录。',advice:'给投递建立记录，留意反馈，也给自己留一点恢复的时间。',timeline:[{year:'2025',title:'毕业 · 求职探索',text:'尝试过运营和财务相关岗位，仍在调整方向。'}]}
-].map(x=>({...x,source:'demo',verified:false,updatedAt:'2026-10-23'}));
+].map((x,i)=>({...x,startCity:['杭州','武汉','北京','广州','成都','南京'][i],source:'demo',verified:false,updatedAt:'2026-10-23'}));
