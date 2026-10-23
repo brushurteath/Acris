@@ -1,0 +1,10 @@
+{
+  "name": "acris-career-paths",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "代际互助的毕业生职业路径资料库",
+  "engines": { "node": ">=24.0.0" },
+  "scripts": { "start": "node server.mjs", "test": "node --test tests/*.test.mjs", "check": "node --check server.mjs && node --check dist/app.js" },
+  "license": "MIT"
+}

@@ -1,0 +1,9 @@
+.git
+.openai
+.env
+.env.*
+data
+node_modules
+*.db*
+*.zip
+*.tar.gz
