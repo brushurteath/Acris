@@ -25,7 +25,7 @@
 
 ```sh
 git clone https://github.com/brushurteath/Acris.git
-cd acris
+cd Acris
 npm start
 ```
 
